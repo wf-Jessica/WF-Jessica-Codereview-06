@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: magenta;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #7FFFDA;
+}
+
+.container {
+    background-color: #7FFFDA;
+
+}
+
+#main {
+    margin: 0 auto;
+}
+
+/* choose option */
+.choose {
+    width: 15%;
+}
+
+/* searchfield */
+.field {
+    margin-left: 20%;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2300ffff' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff2ecb' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 500px;
+}
+
+/* information container */
+.col-sm-12 {
+    align-items: center;
+    margin: 0.5%;
+    padding: 0;
+    border: 2px;
+    box-shadow: 2px 3px 2px 3px magenta;
+
+}
+
+.bild {
+    margin: 0 auto;
+}
+h2{
+	color: aquamarine ;
+}

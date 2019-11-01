@@ -1,0 +1,175 @@
+// main class location
+var __extends = (this && this.__extends) || (function() {
+    var extendStatics = function(d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function(d, b) { d.__proto__ = b; }) ||
+            function(d, b) { for (var p in b)
+                    if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function(d, b) {
+        extendStatics(d, b);
+
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Location = /** @class */ (function() {
+    function Location(name, adress, zip, discription, img, data) {
+        this.name = name;
+        this.adress = adress;
+        this.zip = zip;
+        this.discription = discription;
+        this.img = img;
+        this.data = data;
+    }
+    Location.prototype.output = function() {
+        // create my Html elements with the output method
+        main.innerHTML += "<div class=\" card col-sm-12 col-md-5 col-lg-3\">\n        \t<img class=\"bild card-img-top\" width=\"100%\" height=\"250px\" src=\"" + this.img + "\" alt=\"\">\n        \t<div class=\"card-body\">\n        \t<h2 class=\"text-center \">" + this.name + "<h2>\n        \t<p class=\"h5 ml-4 text-dark\" >" + this.adress + " <br> " + this.zip + " </p4 m-2\n        \t<p class=\"h5 ml-4 text-dark\">" + this.discription + "</p>\n        \t<p class=\"h5 ml-4 text-dark\">" + this.data + "</p>\n        \t</div>\n   \n        </div>";
+    };
+    return Location;
+}());
+// Location array with 6 different locations
+var arr = [new Location("Statue of Liberty", "New York", "NY 10004", "Built in 1886, it remains a famous world symbol of freedom and one of the greatest American icons.", "img/liberty.jpg", "450,000 pounds"),
+    new Location("CentralPark", "New York", "NY", "This huge park in the city center, a half-mile wide and 2.5 miles long, is one of the things that makes New York such a beautiful and livable city.", "img/centralpark.jpg", "2.5 miles long"),
+    new Location("Rockefeller Center", "New York", "NY 10111", "When it comes to New York attractions, Rockefeller Center is on almost all tourist's itineraries.", "img/Rockfellercenter.jpg", "70th floors"),
+    new Location("Metropolitan Museum of Art", "1000 5th Ave", "NY 10028", "The Metropolitan Museum of Art, or the Met, as it is commonly known, was founded in 1870, and is one of the most famous museums in the United States.", "img/museum.jpg", "period of 5,000 years"),
+    new Location("Empire State Building", "20 W 34th St", "NY 10001", "The Empire State Building is one of New York's most famous landmark buildings and key tourist attractions.", "img/empire.jpg", "opened in 1931"),
+    new Location("Times Square", "Broadway and 7th Avenue", "NY", "Lined with huge, brilliantly lit billboards and screens, Times Square is the place to go in New York in the evening, but still exciting at any time of day.", "img/square.jpg", " named in 1904")
+];
+// for loop to show all elements from array location
+for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
+    one = arr_1[_i];
+    one.output();
+}
+// child class restaurant 
+var Restaurant = /** @class */ (function(_super) {
+    __extends(Restaurant, _super);
+
+    function Restaurant(name, adress, zip, discription, img, data, tel) {
+        var _this = _super.call(this, name, adress, zip, discription, img, data) || this;
+        _this.tel = tel;
+        return _this;
+    }
+    return Restaurant;
+}(Location));
+// second array with 6 different restaurants
+var arr2 = [new Location("Katz", "205 East Houston Street", "NY 10002", "In 1888 a small deli by the name of Iceland Brothers was established on Ludlow Street in New York’s Lower East Side by the Iceland brothers.", "img/katz.jpg", "+1 212-254-2246"),
+    new Location("Daniel", "60 E 65th St", "NY 10065", "Since opening in 1993, DANIEL has earned its place among the pillars of New York City’s bustling dining scene", "img/daniel.jpg", "+1 212-288-0033"),
+    new Location("Tree Bistro", "190 1st Avenue #4004", "NY 10009", "Tree serves thoughtfully prepared bistro fare in a casual romantic atmosphere,", "img/treebistro.jpg", "+1 212-358-7171"),
+    new Location("The Modern", "9 W 53rd St", "NY 10019", "The Modern is a two Michelin-starred, contemporary American restaurant at the Museum of Modern Art.", "img/modern.jpg", "+1 212-333-1220"),
+    new Location("Ribalta", "48 E 12th St", "NY 10003", "Rosario and Pasquale have brought Naples into the heart of New York to make you experience", "img/ribalta.jpg", "+1 212-777-7781"),
+    new Location("Aqua", "210 Spring St", "NY 10012", "Featuring 25 oyster varieties daily, exotic delicacies, and highlighting fish and seafood bounties from the clean waters and oceans found locally and around our country.", "img/aqua.jpg", "+1 212-274-0505")
+];
+// for loop for my second array to show all restaurants
+for (var _a = 0, arr2_1 = arr2; _a < arr2_1.length; _a++) {
+    two = arr2_1[_a];
+    two.output();
+}
+// child class events
+var Events = /** @class */ (function(_super) {
+    __extends(Events, _super);
+
+    function Events(name, adress, zip, discription, img, data, date) {
+        var _this = _super.call(this, name, adress, zip, discription, img, data) || this;
+        _this.date = date;
+        return _this;
+    }
+    return Events;
+}(Location));
+// third array with 6 different events
+var arr3 = [new Location("Trampled of Turtels", "61 WYTHE AVENUE", "NY 11249", "Trampled by Turtles are from Duluth, Minnesota, where frontman Dave Simonett initially formed the group as a side project in 2003", "img/tramplet.jpg", "30.Oktober 2019"),
+    new Location("Lion King", "Minskoff Theatre", "NY", "More than 85 million people around the world have come to discover the thrill, the majesty, the truly one-of-a-kind musical that is THE LION KING", "img/lionking.jpg", "02.November 2019"),
+    new Location("Salon du chocolat", "Javits Center", "NY", "It’s a perfect event for family fun, a group experience, a unique date destination, or just some invaluable “me” time to discover exclusive vendors not available anywhere else", "img/chocolate.jpg", "17.-19.November 2019"),
+    new Location("Christmas spectacular", "1260 Avenue of the Americas", "NY 10020", "Radio City Christmas Spectacular features dancers, drones, fireworks, and a flying Santa at Radio City Music Hall.", "img/christmas.jpg", "8.November 2019 - 5.Jänner 2020"),
+    new Location("Thanks Giving day", "Central Park West and 6th Avenue", "NY", "Watch giant balloons, floats, marching bands, clowns, and performers as Macy’s Thanksgiving Day Parade.", "img/tgd.jpg", "28.November 2019"),
+    new Location("Big apple circus", "Lincoln Center", "NY", "The famous Big Apple Circus has high-wire aerialists, acrobats, jugglers, clowns, contortionists, rescue animals", "img/bigapple.jpg", "01.November 2019 - 20.Jänner 2020")
+];
+// for loop for my third array to show all events
+for (var _b = 0, arr3_1 = arr3; _b < arr3_1.length; _b++) {
+    three = arr3_1[_b];
+    three.output();
+}
+// choose option with if schleife
+$("#choose").on("change", function() {
+    if (this.value == "begin") {
+        $("#main").empty();
+        // all 3 array to show at the begin         
+        for (var _i = 0, arr3_2 = arr3; _i < arr3_2.length; _i++) {
+            three = arr3_2[_i];
+            three.output();
+        }
+        for (var _a = 0, arr2_2 = arr2; _a < arr2_2.length; _a++) {
+            two = arr2_2[_a];
+            two.output();
+        }
+        for (var _b = 0, arr_2 = arr; _b < arr_2.length; _b++) {
+            one = arr_2[_b];
+            one.output();
+        }
+    }
+    // if click on location show only locations    
+    else if (this.value == "location") {
+        $("#main").empty();
+        for (var _c = 0, arr_3 = arr; _c < arr_3.length; _c++) {
+            one = arr_3[_c];
+            one.output();
+        }
+    }
+    // if click on location show only restaurants    
+    else if (this.value == "restaurants") {
+        $("#main").empty();
+        for (var _d = 0, arr2_3 = arr2; _d < arr2_3.length; _d++) {
+            two = arr2_3[_d];
+            two.output();
+        }
+    }
+    // if click on location show only events
+    else if (this.value == "events") {
+        $("#main").empty();
+        for (var _e = 0, arr3_3 = arr3; _e < arr3_3.length; _e++) {
+            three = arr3_3[_e];
+            three.output();
+        }
+    }
+    // if nothing happens than show arr 1
+    else {
+        $("#choose").empty();
+        for (var _f = 0, arr_4 = arr; _f < arr_4.length; _f++) {
+            one = arr_4[_f];
+            one.output();
+        }
+    }
+});
+// search function
+$("#btn").on("click", function() {
+    var input = $("#search").val();
+    // 3 results because of my 3 arrays 
+    result = [];
+    result1 = [];
+    result2 = [];
+    // filter to search for a letter for example 
+    result = arr.filter(function(x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
+    result1 = arr2.filter(function(x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
+    result2 = arr3.filter(function(x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
+    // 3for loops for the results and the output
+    for (var _i = 0, result_1 = result; _i < result_1.length; _i++) {
+        one = result_1[_i];
+        $("#main").empty();
+        soutput(result);
+    }
+    for (var _a = 0, result1_1 = result1; _a < result1_1.length; _a++) {
+        one = result1_1[_a];
+        $("#main").empty();
+        soutput(result1);
+    }
+    for (var _b = 0, result2_1 = result2; _b < result2_1.length; _b++) {
+        one = result2_1[_b];
+        $("#main").empty();
+        soutput(result2);
+    }
+    // function output and create html 
+    function soutput() {
+        main.innerHTML += "<div class=\" card col-sm-12 col-md-5 col-lg-3\">\n        \t<img class=\"bild card-img-top\" width=\"100%\" height=\"250px\" src=\"" + one.img + "\" alt=\"\">\n        \t<div class=\"card-body\">\n        \t<h2 class=\"text-center\">" + one.name + "<h2>\n        \t<p class=\"h5 ml-4 text-dark\">" + one.adress + " <br> " + one.zip + " </p4 m-2\n        \t<p class=\"h5 ml-4 text-dark\">" + one.discription + "</p>\n        \t<p class=\"h5 ml-4 text-dark\">" + one.data + "</p>\n        \t</div>\n   \n        </div>";
+    }
+});
