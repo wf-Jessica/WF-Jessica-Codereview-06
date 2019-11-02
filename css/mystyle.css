@@ -74,5 +74,15 @@ body {
     margin: 0 auto;
 }
 h2{
-	color: aquamarine ;
+	color: magenta;
+}
+
+.adress{
+	font-size: 16px;
+}
+.para{
+	color: aquamarine;
+}
+.para:hover{
+	background-color: magenta;
 }

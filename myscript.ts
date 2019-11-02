@@ -18,9 +18,9 @@ class Location{
         	<img class="bild card-img-top" width="100%" height="250px" src="${this.img}" alt="">
         	<div class="card-body">
         	<h2 class="text-center ">${this.name}<h2>
-        	<p class="h5 ml-4 text-dark" >${this.adress} <br> ${this.zip} </p4 m-2
-        	<p class="h5 ml-4 text-dark">${this.discription}</p>
-        	<p class="h5 ml-4 text-dark">${this.data}</p>
+        	<p class=" adress h5 ml-4 text-dark" >${this.adress} <br> ${this.zip} </p4 m-2
+        	<p class="ml-4 text-dark">${this.discription}</p>
+        	<p class="para h5 ml-4 ">${this.data}</p>
         	</div>
    
         </div>`;
@@ -153,9 +153,9 @@ soutput(result2);}
         	<img class="bild card-img-top" width="100%" height="250px" src="${one.img}" alt="">
         	<div class="card-body">
         	<h2 class="text-center">${one.name}<h2>
-        	<p class="h5 ml-4 text-dark">${one.adress} <br> ${one.zip} </p4 m-2
+        	<p class=" adress h5 ml-4 text-dark">${one.adress} <br> ${one.zip} </p4 m-2
         	<p class="h5 ml-4 text-dark">${one.discription}</p>
-        	<p class="h5 ml-4 text-dark">${one.data}</p>
+        	<p class="para ml-4 ">${one.data}</p>
         	</div>
    
         </div>`;

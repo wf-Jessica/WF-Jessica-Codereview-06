@@ -1,20 +1,18 @@
 // main class location
-var __extends = (this && this.__extends) || (function() {
-    var extendStatics = function(d, b) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function(d, b) { d.__proto__ = b; }) ||
-            function(d, b) { for (var p in b)
-                    if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
-    return function(d, b) {
+    return function (d, b) {
         extendStatics(d, b);
-
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Location = /** @class */ (function() {
+var Location = /** @class */ (function () {
     function Location(name, adress, zip, discription, img, data) {
         this.name = name;
         this.adress = adress;
@@ -23,9 +21,9 @@ var Location = /** @class */ (function() {
         this.img = img;
         this.data = data;
     }
-    Location.prototype.output = function() {
+    Location.prototype.output = function () {
         // create my Html elements with the output method
-        main.innerHTML += "<div class=\" card col-sm-12 col-md-5 col-lg-3\">\n        \t<img class=\"bild card-img-top\" width=\"100%\" height=\"250px\" src=\"" + this.img + "\" alt=\"\">\n        \t<div class=\"card-body\">\n        \t<h2 class=\"text-center \">" + this.name + "<h2>\n        \t<p class=\"h5 ml-4 text-dark\" >" + this.adress + " <br> " + this.zip + " </p4 m-2\n        \t<p class=\"h5 ml-4 text-dark\">" + this.discription + "</p>\n        \t<p class=\"h5 ml-4 text-dark\">" + this.data + "</p>\n        \t</div>\n   \n        </div>";
+        main.innerHTML += "<div class=\" card col-sm-12 col-md-5 col-lg-3\">\n        \t<img class=\"bild card-img-top\" width=\"100%\" height=\"250px\" src=\"" + this.img + "\" alt=\"\">\n        \t<div class=\"card-body\">\n        \t<h2 class=\"text-center \">" + this.name + "<h2>\n        \t<p class=\" adress h5 ml-4 text-dark\" >" + this.adress + " <br> " + this.zip + " </p4 m-2\n        \t<p class=\"ml-4 text-dark\">" + this.discription + "</p>\n        \t<p class=\"para h5 ml-4 \">" + this.data + "</p>\n        \t</div>\n   \n        </div>";
     };
     return Location;
 }());
@@ -43,9 +41,8 @@ for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
     one.output();
 }
 // child class restaurant 
-var Restaurant = /** @class */ (function(_super) {
+var Restaurant = /** @class */ (function (_super) {
     __extends(Restaurant, _super);
-
     function Restaurant(name, adress, zip, discription, img, data, tel) {
         var _this = _super.call(this, name, adress, zip, discription, img, data) || this;
         _this.tel = tel;
@@ -67,9 +64,8 @@ for (var _a = 0, arr2_1 = arr2; _a < arr2_1.length; _a++) {
     two.output();
 }
 // child class events
-var Events = /** @class */ (function(_super) {
+var Events = /** @class */ (function (_super) {
     __extends(Events, _super);
-
     function Events(name, adress, zip, discription, img, data, date) {
         var _this = _super.call(this, name, adress, zip, discription, img, data) || this;
         _this.date = date;
@@ -91,10 +87,10 @@ for (var _b = 0, arr3_1 = arr3; _b < arr3_1.length; _b++) {
     three.output();
 }
 // choose option with if schleife
-$("#choose").on("change", function() {
+$("#choose").on("change", function () {
     if (this.value == "begin") {
         $("#main").empty();
-        // all 3 array to show at the begin         
+        // all 3 array to show at the begin 		
         for (var _i = 0, arr3_2 = arr3; _i < arr3_2.length; _i++) {
             three = arr3_2[_i];
             three.output();
@@ -108,7 +104,7 @@ $("#choose").on("change", function() {
             one.output();
         }
     }
-    // if click on location show only locations    
+    // if click on location show only locations	
     else if (this.value == "location") {
         $("#main").empty();
         for (var _c = 0, arr_3 = arr; _c < arr_3.length; _c++) {
@@ -116,7 +112,7 @@ $("#choose").on("change", function() {
             one.output();
         }
     }
-    // if click on location show only restaurants    
+    // if click on location show only restaurants	
     else if (this.value == "restaurants") {
         $("#main").empty();
         for (var _d = 0, arr2_3 = arr2; _d < arr2_3.length; _d++) {
@@ -142,16 +138,16 @@ $("#choose").on("change", function() {
     }
 });
 // search function
-$("#btn").on("click", function() {
+$("#btn").on("click", function () {
     var input = $("#search").val();
     // 3 results because of my 3 arrays 
     result = [];
     result1 = [];
     result2 = [];
     // filter to search for a letter for example 
-    result = arr.filter(function(x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
-    result1 = arr2.filter(function(x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
-    result2 = arr3.filter(function(x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
+    result = arr.filter(function (x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
+    result1 = arr2.filter(function (x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
+    result2 = arr3.filter(function (x) { return x.name.toLowerCase().startsWith(input.toLowerCase()); });
     // 3for loops for the results and the output
     for (var _i = 0, result_1 = result; _i < result_1.length; _i++) {
         one = result_1[_i];
@@ -170,6 +166,6 @@ $("#btn").on("click", function() {
     }
     // function output and create html 
     function soutput() {
-        main.innerHTML += "<div class=\" card col-sm-12 col-md-5 col-lg-3\">\n        \t<img class=\"bild card-img-top\" width=\"100%\" height=\"250px\" src=\"" + one.img + "\" alt=\"\">\n        \t<div class=\"card-body\">\n        \t<h2 class=\"text-center\">" + one.name + "<h2>\n        \t<p class=\"h5 ml-4 text-dark\">" + one.adress + " <br> " + one.zip + " </p4 m-2\n        \t<p class=\"h5 ml-4 text-dark\">" + one.discription + "</p>\n        \t<p class=\"h5 ml-4 text-dark\">" + one.data + "</p>\n        \t</div>\n   \n        </div>";
+        main.innerHTML += "<div class=\" card col-sm-12 col-md-5 col-lg-3\">\n        \t<img class=\"bild card-img-top\" width=\"100%\" height=\"250px\" src=\"" + one.img + "\" alt=\"\">\n        \t<div class=\"card-body\">\n        \t<h2 class=\"text-center\">" + one.name + "<h2>\n        \t<p class=\" adress h5 ml-4 text-dark\">" + one.adress + " <br> " + one.zip + " </p4 m-2\n        \t<p class=\"h5 ml-4 text-dark\">" + one.discription + "</p>\n        \t<p class=\"para ml-4 \">" + one.data + "</p>\n        \t</div>\n   \n        </div>";
     }
 });
